@@ -12,3 +12,11 @@ services:
       - "8000:8000"
     depends_on:
       - vision-ai
+    volumes:
+      - ./generated:/tmp/ai-iac
+  terraform-runner:
+    build:
+      context: ../services/terraform-runner
+    volumes:
+      - ./generated:/tmp/ai-iac
+
